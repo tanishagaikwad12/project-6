@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Time Table Management System</title>
+    <link rel="stylesheet" href="p6.css">
+</head>
+<body>
+    <header>
+        <h1>College Time Table Management System</h1>
+    </header>
+    <main>
+        <section id="role-selection">
+            <h2>Select Role</h2>
+            <button onclick="selectRole('admin')">Admin</button>
+            <button onclick="selectRole('faculty')">Faculty</button>
+            <button onclick="selectRole('student')">Student</button>
+        </section>
+        <section id="admin-section" class="role-section">
+            <h2>Admin Panel</h2>
+            <button onclick="showScheduleForm()">Create/Edit Schedule</button>
+            <button onclick="showAnnouncements()">Make Announcements</button>
+            <button onclick="showAttendance()">Track Attendance</button>
+        </section>
+        <section id="faculty-section" class="role-section">
+            <h2>Faculty Panel</h2>
+            <button onclick="showScheduleForm()">Create/Edit Schedule</button>
+            <button onclick="showAnnouncements()">View Announcements</button>
+            <button onclick="showAttendance()">Track Attendance</button>
+        </section>
+        <section id="student-section" class="role-section">
+            <h2>Student Panel</h2>
+            <button onclick="showSchedule()">View Schedule</button>
+            <button onclick="showAnnouncements()">View Announcements</button>
+            <button onclick="showAttendance()">View Attendance</button>
+        </section>
+        <section id="schedule-creation" class="feature-section">
+        <section id="schedule-creation">
+            <h2>Create/Edit Schedule</h2>
+            <form id="schedule-form">
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" required>
+                
+                <label for="day">Day:</label>
+                <select id="day" name="day" required>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Add Schedule</button>
+            </form>
+        </section>
+        <section id="schedule-list">
+            <h2>Class Schedules</h2>
+            <ul id="schedule"></ul>
+        </section>
+        <section id="announcements" class="feature-section">
+            <h2>Announcements</h2>
+            <form id="announcement-form">
+                <label for="announcement">Announcement:</label>
+                <textarea id="announcement" name="announcement" required></textarea>
+                <button type="submit">Add Announcement</button>
+            </form>
+            <ul id="announcement-list"></ul>
+        </section>
+        <section id="attendance" class="feature-section">
+            <h2>Attendance Tracking</h2>
+            <form id="attendance-form">
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" name="student-name" required>
+                <label for="attendance-day">Day:</label>
+                <select id="attendance-day" name="attendance-day" required>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+                <button type="submit">Mark Attendance</button>
+            </form>
+            <ul id="attendance-list"></ul>
+        </section>
+    </main>
+    <script src="p6.js"></script>
+</body>
+</html>
